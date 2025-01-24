@@ -246,12 +246,13 @@ public class OptionsTest {
     }
 
     @Test
-    public void testMissingOptionException() throws ParseException {
-        final Options options = new Options();
-        OptionBuilder.isRequired();
-        options.addOption(OptionBuilder.create("f"));
-        final MissingOptionException e = assertThrows(MissingOptionException.class, () -> new PosixParser().parse(options, new String[0]));
-        assertEquals("Missing required option: f", e.getMessage());
+    public void testMissingOptionException() 
+    {
+    final Options options = new Options();
+    OptionBuilder.isRequired();
+    options.addOption(OptionBuilder.create("f"));
+    final MissingOptionException e = assertThrows(MissingOptionException.class, () -> new PosixParser().parse(options, new String[0]));
+    assertEquals("Missing required option: f", e.getMessage());
     }
 
     @Test
