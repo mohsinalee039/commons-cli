@@ -68,11 +68,12 @@ public class BugCLI71Test {
     }
 
     @Test
-    public void testLackOfError() throws Exception {
-        final String[] args = { "-k", "-a", "Caesar" };
-        final MissingArgumentException e = assertThrows(MissingArgumentException.class, () -> parser.parse(options, args));
-        assertEquals("k", e.getOption().getOpt(), "option missing an argument");
+    public void testLackOfError() {
+    final String[] args = { "-k", "-a", "Caesar" };
+    final MissingArgumentException e = assertThrows(MissingArgumentException.class, () -> parser.parse(options, args));
+    assertEquals("k", e.getOption().getOpt(), "option missing an argument");
     }
+
 
     @Test
     public void testMistakenArgument() throws Exception {
