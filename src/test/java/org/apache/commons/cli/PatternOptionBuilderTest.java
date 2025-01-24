@@ -100,12 +100,13 @@ public class PatternOptionBuilderTest {
     }
 
     @Test
-    public void testRequiredOption() throws Exception {
-        final Options options = PatternOptionBuilder.parsePattern("!n%m%");
-        final CommandLineParser parser = new PosixParser();
-        final MissingOptionException e = assertThrows(MissingOptionException.class, () -> parser.parse(options, new String[] { "" }));
-        assertEquals(1, e.getMissingOptions().size());
-        assertTrue(e.getMissingOptions().contains("n"));
+    public void testRequiredOption() 
+    {
+    final Options options = PatternOptionBuilder.parsePattern("!n%m%");
+    final CommandLineParser parser = new PosixParser();
+    final MissingOptionException e = assertThrows(MissingOptionException.class, () -> parser.parse(options, new String[] { "" }));
+    assertEquals(1, e.getMissingOptions().size());
+    assertTrue(e.getMissingOptions().contains("n"));
     }
 
     @Test
