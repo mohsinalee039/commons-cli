@@ -55,7 +55,7 @@ public class WeirdOptionFormat implements Function<Iterable<Option>, TableDefini
             row.add(option.getLongOpt());
             row.add(option.isDeprecated() ? "T" : "F");
             row.add(option.hasArg() ? option.getArgName() : "--");
-            row.add(option.getType() == null ? "--" : option.getValue().toString());
+            row.add(option.getType() == null ? "--" : option.getValue()); // Removed unnecessary toString()
             row.add(option.getDescription());
             rows.add(row);
         }
