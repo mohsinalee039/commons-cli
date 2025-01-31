@@ -1,18 +1,32 @@
+/*
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ */
+
 package org.apache.commons.cli;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.Arguments;
-
-import java.util.stream.Stream;
+import org.junit.jupiter.api.Test;
 
 /**
- * Test case for the PosixParser with parameterized tests.
+ * Test case for the PosixParser.
+ *
+ * TODO Needs a rework using JUnit parameterized tests.
  */
 public class PosixParserTest extends AbstractParserTestCase {
-
     @Override
     @SuppressWarnings("deprecation")
     @BeforeEach
@@ -21,34 +35,63 @@ public class PosixParserTest extends AbstractParserTestCase {
         parser = new PosixParser();
     }
 
-    /**
-     * Provides disabled test cases that are not supported by PosixParser.
-     */
-    private static Stream<Arguments> unsupportedTests() {
-        return Stream.of(
-            Arguments.of("testAmbiguousLongWithoutEqualSingleDash"),
-            Arguments.of("testAmbiguousLongWithoutEqualSingleDash2"),
-            Arguments.of("testAmbiguousPartialLongOption4"),
-            Arguments.of("testDoubleDash2"),
-            Arguments.of("testLongWithEqualSingleDash"),
-            Arguments.of("testLongWithoutEqualSingleDash"),
-            Arguments.of("testLongWithUnexpectedArgument1"),
-            Arguments.of("testNegativeOption"),
-            Arguments.of("testShortWithEqual"),
-            Arguments.of("testUnambiguousPartialLongOption4")
-        );
+    @Override
+    @Test
+    @Disabled("not supported by the PosixParser")
+    public void testAmbiguousLongWithoutEqualSingleDash() throws Exception {
     }
 
-    /**
-     * Runs each disabled test and marks them as not supported.
-     *
-     * @param testName The name of the unsupported test.
-     */
-    @ParameterizedTest(name = "{0} is not supported by the PosixParser")
-    @MethodSource("unsupportedTests")
-    @Disabled("Not supported by the PosixParser")
-    public void testUnsupportedByPosixParser(String testName) {
-        // Each unsupported test is effectively a placeholder
-        System.out.printf("%s is not supported by the PosixParser%n", testName);
+    @Override
+    @Test
+    @Disabled("not supported by the PosixParser")
+    public void testAmbiguousLongWithoutEqualSingleDash2() throws Exception {
+    }
+
+    @Override
+    @Test
+    @Disabled("not supported by the PosixParser")
+    public void testAmbiguousPartialLongOption4() throws Exception {
+    }
+
+    @Override
+    @Test
+    @Disabled("not supported by the PosixParser")
+    public void testDoubleDash2() throws Exception {
+    }
+
+    @Override
+    @Test
+    @Disabled("not supported by the PosixParser")
+    public void testLongWithEqualSingleDash() throws Exception {
+    }
+
+    @Override
+    @Test
+    @Disabled("not supported by the PosixParser")
+    public void testLongWithoutEqualSingleDash() throws Exception {
+    }
+
+    @Override
+    @Test
+    @Disabled("not supported by the PosixParser")
+    public void testLongWithUnexpectedArgument1() throws Exception {
+    }
+
+    @Override
+    @Test
+    @Disabled("not supported by the PosixParser (CLI-184)")
+    public void testNegativeOption() throws Exception {
+    }
+
+    @Override
+    @Test
+    @Disabled("not supported by the PosixParser")
+    public void testShortWithEqual() throws Exception {
+    }
+
+    @Override
+    @Test
+    @Disabled("not supported by the PosixParser")
+    public void testUnambiguousPartialLongOption4() throws Exception {
     }
 }

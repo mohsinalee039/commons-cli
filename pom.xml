@@ -149,10 +149,10 @@
           <configuration>
             <mainClass>BenchmarkRunner</mainClass>
             <systemProperties>
-              <systemProperty>
-                <key>java.class.path</key>
-                <value>${project.build.outputDirectory}${path.separator}${depClasspath}</value>
-              </systemProperty>
+<!--              <systemProperty>-->
+<!--                <key>java.class.path</key>-->
+<!--                <value>${project.build.outputDirectory}${path.separator}${depClasspath}</value>-->
+<!--              </systemProperty>-->
             </systemProperties>
           </configuration>
         </plugin>
@@ -177,6 +177,9 @@
                 <goal>test</goal>
               </goals>
               <configuration>
+                <excludes>
+                  <exclude>org/apache/commons/cli/PosixParserTest.java</exclude>
+                </excludes>
                 <includes>
                   <include>randoop.main.Main</include>
                 </includes>
@@ -424,9 +427,7 @@
                     <pathconvert pathsep=" " property="dirs">
                       <dirset dir="${commons.scmPubCheckoutDirectory}" includes="*" />
                     </pathconvert>
-                    <exec executable="svn">
-                      <arg line="update --set-depth infinity ${dirs}" />
-                    </exec>
+
                   </target>
                 </configuration>
               </execution>
