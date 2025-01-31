@@ -424,7 +424,7 @@ public class HelpFormatterTest {
         final StringBuilder expected = new StringBuilder().append(lpad).append("-a,--aaa");
 
         options = new Options().addOption(option);
-        if (expectedTxt.length() > 0) {
+        if (!expectedTxt.isEmpty()) {
             expected.append(dpad).append(expectedTxt);
         }
         hf.renderOptions(sb, 160, options, leftPad, descPad);
