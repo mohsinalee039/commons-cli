@@ -246,8 +246,7 @@ public class OptionsTest {
     }
 
     @Test
-    public void testMissingOptionException() 
-    {
+    public void testMissingOptionException() {
     final Options options = new Options();
     OptionBuilder.isRequired();
     options.addOption(OptionBuilder.create("f"));
