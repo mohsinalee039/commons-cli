@@ -168,7 +168,7 @@ public class CommandLineTest {
         return lst.stream();
     }
 
-    private static Stream<Arguments> createParsedOptionValuesParameters() throws ParseException {
+    private static Stream<Arguments> createParsedOptionValuesParameters() {
         final List<Arguments> lst = new ArrayList<>();
         final Option optT = Option.builder().option("T").longOpt("tee").deprecated().type(Integer.class).optionalArg(true).hasArgs().build();
         final Option optU = Option.builder("U").longOpt("you").type(Integer.class).optionalArg(true).hasArgs().build();
@@ -199,6 +199,7 @@ public class CommandLineTest {
 
         return lst.stream();
     }
+
 
     char asChar(final Option opt) {
         return opt.getOpt().charAt(0);
