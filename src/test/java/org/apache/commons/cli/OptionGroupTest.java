@@ -138,14 +138,18 @@ public class OptionGroupTest {
     }
 
     @Test
-    public void testTwoLongOptionsFromGroup() throws Exception {
+    public void testTwoLongOptionsFromGroup() {
         final String[] args = { "--file", "--directory" };
-        final AlreadySelectedException e = assertThrows(AlreadySelectedException.class, () -> parser.parse(options, args));
+        final AlreadySelectedException e = assertThrows(
+                AlreadySelectedException.class,
+                () -> parser.parse(options, args)
+        );
         assertNotNull(e.getOptionGroup(), "null option group");
         assertTrue(e.getOptionGroup().isSelected());
         assertEquals("f", e.getOptionGroup().getSelected(), "selected option");
         assertEquals("d", e.getOption().getOpt(), "option");
     }
+
 
     @Test
     public void testTwoOptionsFromDifferentGroup() throws Exception {
