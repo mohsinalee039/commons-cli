@@ -49,6 +49,7 @@ public class CommandLineTest {
 
         final String[] foobar = { "foo", "bar" };
         // T set
+        // T set
         lst.add(Arguments.of(new String[] {"-T"}, optT, optionGroup, true, true, true, true, optT));
         lst.add(Arguments.of(new String[] {"-T", "foo"}, optT, optionGroup, true, true, true, true, optT));
         lst.add(Arguments.of(new String[] {"--tee"}, optT, optionGroup, true, true, true, true, optT));
@@ -59,7 +60,7 @@ public class CommandLineTest {
         lst.add(Arguments.of(new String[] {"--you"}, optT, optionGroup, false, false, false, true, optU));
         lst.add(Arguments.of(new String[] {"--you", "foo", "bar"}, optT, optionGroup, false, false, false, true, optU));
 
-        // U set
+// U set
         lst.add(Arguments.of(new String[] {"-T"}, optU, optionGroup, false, false, true, true, optT));
         lst.add(Arguments.of(new String[] {"-T", "foo", "bar"}, optU, optionGroup, false, false, true, true, optT));
         lst.add(Arguments.of(new String[] {"--tee"}, optU, optionGroup, false, false, true, true, optT));
