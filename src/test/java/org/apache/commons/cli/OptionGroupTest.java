@@ -160,14 +160,18 @@ public class OptionGroupTest {
     }
 
     @Test
-    public void testTwoOptionsFromGroup() throws Exception {
+    public void testTwoOptionsFromGroup() {
         final String[] args = { "-f", "-d" };
-        final AlreadySelectedException e = assertThrows(AlreadySelectedException.class, () -> parser.parse(options, args));
+        final AlreadySelectedException e = assertThrows(
+                AlreadySelectedException.class,
+                () -> parser.parse(options, args)
+        );
         assertNotNull(e.getOptionGroup(), "null option group");
         assertTrue(e.getOptionGroup().isSelected());
         assertEquals("f", e.getOptionGroup().getSelected(), "selected option");
         assertEquals("d", e.getOption().getOpt(), "option");
     }
+
 
     @Test
     public void testTwoOptionsFromGroupWithProperties() throws Exception {
