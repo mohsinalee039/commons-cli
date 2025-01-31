@@ -24,6 +24,7 @@ package org.apache.commons.cli;
  * @deprecated since 1.3, use the {@link DefaultParser} instead
  */
 @Deprecated
+
 public class BasicParser extends Parser {
     /**
      * <p>
