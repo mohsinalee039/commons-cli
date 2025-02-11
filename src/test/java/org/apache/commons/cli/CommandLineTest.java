@@ -74,7 +74,7 @@ public class CommandLineTest {
         return lst.stream();
     }
 
-    private static Stream<Arguments> createOptionValueParameters() throws ParseException {
+    private static Stream<Arguments> createOptionValueParameters() {
         final List<Arguments> lst = new ArrayList<>();
         final Option optT = Option.builder().option("T").longOpt("tee").deprecated().optionalArg(true).build();
         final Option optU = Option.builder("U").longOpt("you").optionalArg(true).build();
