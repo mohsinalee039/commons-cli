@@ -47,7 +47,6 @@ public class CommandLineTest {
         final Option optU = Option.builder("U").longOpt("you").optionalArg(true).build();
         final OptionGroup optionGroup = new OptionGroup().addOption(optT).addOption(optU);
 
-        final String[] foobar = { "foo", "bar" };
         // T set
         // T set
         lst.add(Arguments.of(new String[] {"-T"}, optT, optionGroup, true, true, true, true, optT));
