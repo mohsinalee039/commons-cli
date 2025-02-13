@@ -216,7 +216,6 @@ public class TypeHandler {
     public static FileInputStream openFile(final String string) throws ParseException {
         return createValue(string, FileInputStream.class);
     }
-
     private static Map<Class<?>, Converter<?, ? extends Throwable>> putDefaultMap(final Map<Class<?>, Converter<?, ? extends Throwable>> map) {
         map.put(Object.class, Converter.OBJECT);
         map.put(Class.class, Converter.CLASS);
