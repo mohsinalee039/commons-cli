@@ -843,7 +843,7 @@ public abstract class AbstractParserTestCase {
     }
 
     @Test
-    public void testUnrecognizedOptionWithBursting() throws Exception {
+    public void testUnrecognizedOptionWithBursting() {
         final UnrecognizedOptionException e = assertThrows(UnrecognizedOptionException.class,
                 () -> parser.parse(options, new String[] { "-adbtoast", "foo", "bar" }));
         assertEquals("-adbtoast", e.getOption());
