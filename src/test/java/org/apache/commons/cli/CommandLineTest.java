@@ -41,13 +41,12 @@ public class CommandLineTest {
 
     private enum Count { ONE, TWO, THREE }
 
-    private static Stream<Arguments> createHasOptionParameters() throws ParseException {
+    private static Stream<Arguments> createHasOptionParameters() {
         final List<Arguments> lst = new ArrayList<>();
         final Option optT = Option.builder().option("T").longOpt("tee").deprecated().optionalArg(true).build();
         final Option optU = Option.builder("U").longOpt("you").optionalArg(true).build();
         final OptionGroup optionGroup = new OptionGroup().addOption(optT).addOption(optU);
 
-        // T set
         // T set
         lst.add(Arguments.of(new String[] {"-T"}, optT, optionGroup, true, true, true, true, optT));
         lst.add(Arguments.of(new String[] {"-T", "foo"}, optT, optionGroup, true, true, true, true, optT));
@@ -59,7 +58,7 @@ public class CommandLineTest {
         lst.add(Arguments.of(new String[] {"--you"}, optT, optionGroup, false, false, false, true, optU));
         lst.add(Arguments.of(new String[] {"--you", "foo", "bar"}, optT, optionGroup, false, false, false, true, optU));
 
-// U set
+        // U set
         lst.add(Arguments.of(new String[] {"-T"}, optU, optionGroup, false, false, true, true, optT));
         lst.add(Arguments.of(new String[] {"-T", "foo", "bar"}, optU, optionGroup, false, false, true, true, optT));
         lst.add(Arguments.of(new String[] {"--tee"}, optU, optionGroup, false, false, true, true, optT));
@@ -72,7 +71,6 @@ public class CommandLineTest {
 
         return lst.stream();
     }
-
     private static Stream<Arguments> createOptionValueParameters() {
         final List<Arguments> lst = new ArrayList<>();
         final Option optT = Option.builder().option("T").longOpt("tee").deprecated().optionalArg(true).build();
