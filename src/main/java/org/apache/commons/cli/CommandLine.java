@@ -68,10 +68,6 @@ public class CommandLine implements Serializable {
          *
          * @deprecated Use {@link #builder()}.
          */
-        @Deprecated
-        public Builder() {
-            // empty
-        }
 
         /**
          * Adds left-over unrecognized option/argument.
